@@ -1,41 +1,32 @@
-import java.util.Random;
 
 /**
  * A Point class to pick out location easily on the map 
  */
 public class Point {
+    /**
+     * x and y coordinates of a point
+     */
     public final int x, y; 
-    private static final Random r = new Random();
 
+    /**
+     * creates a point
+     * @param x x-coordinate of a point
+     * @param y y-coordinate of a point
+     */
     public Point(int x, int y) {
         this.x = x;
         this.y = y;
     }
 
+    /**
+     * creates a zero point. 
+     * both x and y coordinates are 0.
+     */
     public Point() {
         this.x = 0;
         this.y = 0;
     }
 
-    //This is used to calculate h value
-    public double distanceTo(Point other) {
-        return Math.sqrt(Math.pow(x - other.x, 2) + Math.pow(y - other.y, 2));
-    }
-
-    /**
-     * Generate random point within specified range
-     * @param x_min minimum value of x-coordinate
-     * @param x_max maximum value of x-coordinate
-     * @param y_min minimum value of y-coordinate
-     * @param y_max maximum value of y-coordinate
-     * @return
-     */
-    public static Point createRandomPoint(int x_min, int x_max, int y_min, int y_max) {
-        int x = r.nextInt(x_max) + x_min;
-        int y = r.nextInt(y_max) + y_min;
-        return new Point(x, y);
-    }
-    
     /**
      * checks if current point is equal to other object or point
      */

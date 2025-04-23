@@ -1,7 +1,7 @@
 import becker.robots.*;
 
 /**
- *RobotTask class
+ *RobotTask class to run a task.
  *@author Sarah Yoo 
  *@version 1.0 
  */
@@ -9,20 +9,15 @@ import becker.robots.*;
 public class RobotTask
 {
 	/**
-	 *run method
-
-	 *@param none
+	 *run a task. specify tasks to run.
 	 *return void
 	 */
 	public void run ()
 	{
-		//construct city
+		//randomly gets a city file
 		City city = null;
-
 		int rC = (int)Math.floor((Math.random()*5));
-
 		System.out.println(rC+"");
-
 		switch (rC) {
 			case 0 -> city = new City("Paint0.wld");
 			case 1 -> city = new City("Paint1.wld");
@@ -33,8 +28,8 @@ public class RobotTask
 			}
 		}
 
-		final int avenues = 9, streets = 9;
-		PainterBot bot = new PainterBot(city, avenues, streets);
-		bot.fill_DFS();
+		final int avenues = 9, streets = 9; //dimensions of canvas or city
+		PaintBot bot = new PaintBot(city, avenues, streets);
+		bot.paint();
 	}
 }
