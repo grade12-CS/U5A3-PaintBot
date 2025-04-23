@@ -32,6 +32,9 @@ public class RobotTask
 			default -> {
 			}
 		}
-		PainterBot bot = new PainterBot(city, 2, 6);
+
+		final int avenues = 9, streets = 9;
+		PainterBot bot = new PainterBot(city, avenues, streets);
+		bot.fill_DFS();
 	}
 }
