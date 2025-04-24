@@ -10,8 +10,8 @@ public class DaveSoftware extends RobotSE {
      * @param y the y-coordinate of robot's starting point 
      * @param x the x-coordinate of robot's starting point
      */
-    public DaveSoftware(City city, int y, int x) {
-        super(city, y, x, Direction.SOUTH, 0); 
+    public DaveSoftware(City city, int y, int x, int things) {
+        super(city, y, x, Direction.SOUTH, things); 
     }
 
     /**

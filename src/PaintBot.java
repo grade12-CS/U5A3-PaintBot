@@ -23,7 +23,7 @@ public class PaintBot extends DaveSoftware {
      * @param streets the height of city where points created less or equal to this height value and greater than zero will be valid.
      */
     public PaintBot(City city, int avenues, int streets) {
-        super(city, 2, 6);
+        super(city, 2, 6, 100);
         this.city = city;
         this.avenues = avenues;
         this.streets = streets;
@@ -76,7 +76,7 @@ public class PaintBot extends DaveSoftware {
         //if already painted or reached an edge, don't paint that point
         if (canPickThing()) return;
         //paint by creating a thing
-        new Thing(city, y, x); 
+        putThing();
 
         //check or paint adjacent points
         dfs(x-1, y, visited);

@@ -4,7 +4,6 @@
 *
 * @author Sarah Yoo 
 * @version 1.0 
-
 */
 
 public class RobotMain
@@ -20,7 +19,5 @@ public class RobotMain
     {
       RobotTask task = new RobotTask ();
       task.run ();
-
     }
-
 }
